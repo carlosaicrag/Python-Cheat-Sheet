@@ -25,6 +25,8 @@ int(19.45)
 import math 
 math(19.45)
 
+
+
 # ? Dictionaries
 
 # * importing this to make a "Counter" instance of how many elelements there are in an array
@@ -53,8 +55,31 @@ h["c"] = "yes"
 
 # ? Arrays 
 
+# * sppending items to an array
 arr = [1,2,3]
 arr.append(4)
 
 # print(arr)
+
+# * getting length of an array
+arr1 = [1,2,3]
+len(arr1)
+
+# * slicing through an array
+
+arr2 = [1,2,3,4]
+start = 1
+stop = 2
+
+arr2[start:stop]  # items start through stop-1
+arr2[start:]      # items start through the rest of the array
+arr2[:stop]       # items from the beginning through stop-1
+arr2[:]           # a copy of the whole array
+
+# * getting last item in an array 
+arr3 = [1,2,3]
+arr3[-1]
+
+
+
 
