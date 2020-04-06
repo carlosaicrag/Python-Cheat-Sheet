@@ -2,7 +2,7 @@
 # ? Main Topic 
 # * subtopic 
 
-# ? loops
+# ? Loops
 # * if you have an array 
 arr = [1,2,3]
 
@@ -12,14 +12,20 @@ arr = [1,2,3]
 # * if you have a dictionary 
 dict = {"c":"carlos"}
 
-for key in dict:
-  print(key) # * this will print each key in the dict dictionary
+# for key in dict:
+  # print(key) # * this will print each key in the dict dictionary
+
+# * looping through an array not starting at 0
+arr4 = [1, 2, 3]
+
+# for num in range(1, len(arr4)):
+#   print(num)
 
 # ? Math
 # * this will print out a float
-print(19/10)  
+#print(19/10)  
 # * a couple of ways that you can turn a float into an into
-# * if you have a postive number then you can do 
+# * if you have a postive number then you can do
 int(19.45)
 # * you could also do this 
 import math 
@@ -55,7 +61,7 @@ h["c"] = "yes"
 
 # ? Arrays 
 
-# * sppending items to an array
+# * appending items to an array
 arr = [1,2,3]
 arr.append(4)
 
@@ -79,6 +85,12 @@ arr2[:]           # a copy of the whole array
 # * getting last item in an array 
 arr3 = [1,2,3]
 arr3[-1]
+
+# * looping through an array not starting at 0 
+arr4 = [1,2,3]
+
+# for num in range(1, len(arr4)):
+#   print(num)
 
 
 

@@ -1,24 +1,37 @@
-def maxSubArray(nums):
+def maxProfit(prices):
         """
-        :type nums: List[int]
+        :type prices: List[int]
         :rtype: int
         """
-        maxSum1 = nums[0]
-        temp = nums[0]
-
-        for num in nums[1:]:
-            if temp < 0:
-                temp = num
-
-                if num > maxSum1:
-                    maxSum1 = num
+        def numberLessThanCurrent(lookAheadInt, currentNum):
+            if lookAheadInt == len(prices):
+                return True
+            elif prices[lookAheadInt] < currentNum:
+                return True
             else:
-                temp = temp + num
+                return False
 
-                if temp > maxSum1:
-                    maxSum1 = temp
+        totalProfit = 0
+        tempProfit = 0
+        buy = prices[0]
 
-        return maxSum1
+        for idx in range(len(prices)):
+            if idx + 1 == len(prices):
+                totalProfit += tempProfit
+                break
 
+            if numberLessThanCurrent(idx+1, prices[idx]):
+                totalProfit += tempProfit
+                tempProfit = 0
+                buy = prices[idx+1]
+            elif numberLessThanCurrent(idx+1, buy):
+                totalProfit += tempProfit
+                tempProfit = 0
+                buy = prices[idx+1]
+            else:
+                tempProfit = (prices[idx+1] - buy)
 
-maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+        return totalProfit
+
+print(maxProfit([7,1,5,3,6,4]))
+# print(maxProfit([1,2,3,4,5]))
