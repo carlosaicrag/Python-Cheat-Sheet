@@ -1,37 +1,24 @@
-def maxProfit(prices):
+def countElements(arr):
         """
-        :type prices: List[int]
+        :type arr: List[int]
         :rtype: int
         """
-        def numberLessThanCurrent(lookAheadInt, currentNum):
-            if lookAheadInt == len(prices):
-                return True
-            elif prices[lookAheadInt] < currentNum:
-                return True
+        dict = {}
+        set = {}
+        count = 0
+
+        for num in arr:
+            if num not in dict:
+                dict[num] = 1
             else:
-                return False
+                dict[num] += 1
 
-        totalProfit = 0
-        tempProfit = 0
-        buy = prices[0]
+        for num in dict:
+            if num + 1 in dict:
+                if dict[num + 1] != 0:
+                    count += 1
 
-        for idx in range(len(prices)):
-            if idx + 1 == len(prices):
-                totalProfit += tempProfit
-                break
+        return count
 
-            if numberLessThanCurrent(idx+1, prices[idx]):
-                totalProfit += tempProfit
-                tempProfit = 0
-                buy = prices[idx+1]
-            elif numberLessThanCurrent(idx+1, buy):
-                totalProfit += tempProfit
-                tempProfit = 0
-                buy = prices[idx+1]
-            else:
-                tempProfit = (prices[idx+1] - buy)
 
-        return totalProfit
-
-print(maxProfit([7,1,5,3,6,4]))
-# print(maxProfit([1,2,3,4,5]))
+countElements([1,2,3])

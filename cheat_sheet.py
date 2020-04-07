@@ -29,7 +29,7 @@ arr4 = [1, 2, 3]
 int(19.45)
 # * you could also do this 
 import math 
-math(19.45)
+# math(19.45)
 
 
 
@@ -92,6 +92,24 @@ arr4 = [1,2,3]
 # for num in range(1, len(arr4)):
 #   print(num)
 
+# * turn an array of strings into a string
+arr = ["c","a","r"]
 
+# print("".join(arr))
 
+# * sorting an array 
+arr = [2,1,3]
 
+# print(sorted(arr))
+
+# * reduce function
+def add(acc,el):
+  acc + el
+
+arr = [1,2,3]
+reduce(add,arr)
+# ? String
+
+# * sorting a string 
+str = "carlos"
+print(sorted(str)) # sorting a string will return an array
