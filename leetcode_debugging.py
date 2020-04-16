@@ -1,24 +1,24 @@
-def countElements(arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
-        dict = {}
-        set = {}
-        count = 0
+def findMaxLength(nums):
+    """
+    :type nums: List[int]
+    :rtype: int
+    """
+    diffH = {0: -1}
+    counts = [0, 0]
+    longest = 0
 
-        for num in arr:
-            if num not in dict:
-                dict[num] = 1
-            else:
-                dict[num] += 1
+    for idx in range(len(nums)):
+      counts[nums[idx]] += 1
+      diff = counts[0] - counts[1]
 
-        for num in dict:
-            if num + 1 in dict:
-                if dict[num + 1] != 0:
-                    count += 1
+      if diff not in diffH:
+        diffH[diff] = idx
+      else:
+        curr = idx - diffH[diff]
 
-        return count
+        if curr > longest:
+          longest = curr
 
-
-countElements([1,2,3])
+    return longest
+    
+findMaxLength([0,1,0,1])

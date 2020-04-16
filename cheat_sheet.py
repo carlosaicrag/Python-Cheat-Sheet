@@ -2,6 +2,11 @@
 # ? Main Topic 
 # * subtopic 
 
+# ? Random stuff
+# * pass is a good placeholder for when python is expecting something 
+pass
+
+
 # ? Loops
 # * if you have an array 
 arr = [1,2,3]
@@ -12,14 +17,16 @@ arr = [1,2,3]
 # * if you have a dictionary 
 dict = {"c":"carlos"}
 
-# for key in dict:
+for key in dict:
   # print(key) # * this will print each key in the dict dictionary
+  pass
 
 # * looping through an array not starting at 0
 arr4 = [1, 2, 3]
 
-# for num in range(1, len(arr4)):
+for num in range(1, len(arr4)):
 #   print(num)
+  pass
 
 # ? Math
 # * this will print out a float
@@ -43,8 +50,9 @@ dict = Counter(arr)
 # * dict looks like this:
 #{1:2,2:1,3:1}
 
-# for key in dict:
+for key in dict:
 #     print(key)
+  pass
 
 
 # print(1/10)
@@ -54,8 +62,9 @@ h ={}
 h["c"] = "yes"
 
 # * checking if a key is within a dictionary 
-# if "key" in h:
+if "key" in h:
 #   print("yes")
+  pass
 
 
 
@@ -89,8 +98,9 @@ arr3[-1]
 # * looping through an array not starting at 0 
 arr4 = [1,2,3]
 
-# for num in range(1, len(arr4)):
+for num in range(1, len(arr4)):
 #   print(num)
+  pass
 
 # * turn an array of strings into a string
 arr = ["c","a","r"]
@@ -108,8 +118,52 @@ def add(acc,el):
 
 arr = [1,2,3]
 reduce(add,arr)
+
+# * reveersing an array
+arr = [1,2,3]
+reversed(arr) # this does not return a list however
+
+#you can return a list by doing this:
+reversed_arr = list(reversed(arr))
+
 # ? String
 
 # * sorting a string 
 str = "carlos"
-print(sorted(str)) # sorting a string will return an array
+# print(sorted(str)) # sorting a string will return an array
+
+# * turning string into array
+str1 = "carlos"
+list(str1) # will turn str1 intto an array
+
+# ? Classes
+# * example 
+
+
+class ShoppingCart(object):
+  """Creates shopping cart objects
+  for users of our fine website."""
+  items_in_cart = {}
+
+  def __init__(self, customer_name):
+    self.customer_name = customer_name
+
+  def add_item(self, product, price):
+    """Add product to the cart."""
+    if not product in self.items_in_cart:
+      self.items_in_cart[product] = price
+      print(product + " added.")
+    else:
+      print(product + " is already in the cart.")
+
+  def remove_item(self, product):
+    """Remove product from the cart."""
+    if product in self.items_in_cart:
+      del self.items_in_cart[product]
+      print(product + " removed.")
+    else:
+      print(product + " is not in the cart.")
+
+
+my_cart = ShoppingCart("carlos")
+my_cart.add_item("banana", 2.50)
