@@ -2,6 +2,21 @@
 # ? Main Topic 
 # * subtopic 
 
+# ? Truthy and Falsy values
+
+# * Truthy
+# non-empty sequences or collections (lists, tuplese, strings, dictionaries, sets)
+# Numeric values that are not zero
+# True
+
+# * Falsy
+# empty lists []
+# empty tuples ()
+# empty dictionaries {}
+# empty sets set()
+# Empty strings ""
+# Empty ranges range(0)
+
 # ? Random stuff
 # * pass is a good placeholder for when python is expecting something 
 pass
@@ -51,8 +66,8 @@ dict = Counter(arr)
 #{1:2,2:1,3:1}
 
 for key in dict:
-#     print(key)
-  pass
+    
+    print(key)
 
 
 # print(1/10)
@@ -66,9 +81,16 @@ if "key" in h:
 #   print("yes")
   pass
 
-
+# ? Tuples ()
+# A tuple is a collection which is ordered and unchangeable. In Python tuples are written with round brackets.
 
 # ? Arrays 
+
+# * popping out an element from an array
+arr = [1,2,3]
+arr.pop() # last element 
+arr.pop(0) #first element 
+arr.pop(n) # pop off nth element
 
 # * appending items to an array
 arr = [1,2,3]
@@ -117,7 +139,7 @@ def add(acc,el):
   acc + el
 
 arr = [1,2,3]
-reduce(add,arr)
+# reduce(add,arr)
 
 # * reveersing an array
 arr = [1,2,3]
